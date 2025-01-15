@@ -1,0 +1,148 @@
+---
+title: 'NFT Trading'
+description: 'Understand how AI agents trade NFTs on GOTAI'
+---
+
+# NFT Trading
+
+GOTAI's AI agents can execute sophisticated trading strategies in the NFT marketplace, leveraging real-time data and market analysis.
+
+## Trading Capabilities
+
+### Market Analysis
+```javascript
+// Analyze market conditions
+const marketData = await agent.analyzeMarket({
+  collection: 'bored-apes',
+  metrics: ['floor_price', 'volume', 'sales'],
+  timeframe: '7d'
+});
+```
+
+### Price Prediction
+```javascript
+// Predict optimal pricing
+const prediction = await agent.predictPrice({
+  nft: {
+    collection: 'crypto-punks',
+    tokenId: '1234'
+  },
+  timeframe: '24h',
+  confidence: 0.95
+});
+```
+
+## Trading Strategies
+
+### 1. Floor Price Trading
+```javascript
+// Set up floor price trading strategy
+const strategy = await agent.createStrategy({
+  type: 'floor_price',
+  parameters: {
+    buyThreshold: 0.9, // 10% below floor
+    sellThreshold: 1.2, // 20% above floor
+    maxHoldingTime: '72h'
+  }
+});
+```
+
+### 2. Rarity Trading
+```javascript
+// Create rarity-based strategy
+const rarityStrategy = await agent.createStrategy({
+  type: 'rarity',
+  parameters: {
+    minRarityScore: 0.8,
+    targetCollections: ['punks', 'apes'],
+    maxInvestment: '10 ETH'
+  }
+});
+```
+
+## Portfolio Management
+
+### Asset Allocation
+```javascript
+// Optimize portfolio allocation
+const portfolio = await agent.optimizePortfolio({
+  budget: '50 ETH',
+  riskLevel: 'moderate',
+  diversification: {
+    collections: 5,
+    categories: ['art', 'collectibles', 'gaming']
+  }
+});
+```
+
+### Performance Tracking
+```javascript
+// Track portfolio performance
+const performance = await agent.trackPerformance({
+  timeframe: '30d',
+  metrics: ['roi', 'profit_loss', 'holding_time'],
+  breakdown: 'collection'
+});
+```
+
+## Risk Management
+
+1. **Position Sizing**
+   - Maximum investment per NFT
+   - Portfolio diversification
+   - Risk-reward ratios
+
+2. **Stop Loss**
+   - Automatic sell triggers
+   - Floor price monitoring
+   - Volatility adjustments
+
+3. **Market Conditions**
+   - Volume analysis
+   - Liquidity assessment
+   - Trend identification
+
+## Advanced Features
+
+### Automated Trading
+```javascript
+// Set up automated trading rules
+const automation = await agent.automate({
+  strategy: strategy.id,
+  rules: {
+    maxDailyTrades: 5,
+    maxSlippage: 0.02,
+    gasPrice: 'medium'
+  }
+});
+```
+
+### Market Making
+```javascript
+// Configure market making strategy
+const marketMaker = await agent.createMarketMaker({
+  spread: 0.05,
+  inventory: {
+    max: 10,
+    min: 2
+  },
+  rebalancing: 'dynamic'
+});
+```
+
+## Best Practices
+
+1. **Research**
+   - Historical data analysis
+   - Collection fundamentals
+   - Community engagement
+
+2. **Execution**
+   - Gas optimization
+   - Slippage control
+   - Transaction timing
+
+3. **Monitoring**
+   - Real-time alerts
+   - Performance metrics
+   - Strategy adjustment

@@ -1,0 +1,139 @@
+---
+title: 'NFT Creation'
+description: 'Create NFTs through your AI agents'
+---
+
+# NFT Creation
+
+GOTAI enables AI agents to create and mint NFTs on various blockchain networks with a simple API call.
+
+## Supported Standards
+
+- ERC-1155 (Multi-token standard)
+- ERC-721 (Non-fungible token standard)
+- Coming Soon: Solana NFTs
+
+## Creating an NFT
+
+```javascript
+// Create a new NFT
+const nft = await gotai.createNFT({
+  // Basic NFT Information
+  title: "AI Generated Masterpiece",
+  description: "A unique piece created by AI",
+  imagePrompt: "A futuristic city with floating gardens and crystal spires",
+  
+  // NFT Configuration
+  standard: "ERC1155", // or "ERC721"
+  chain: "ethereum", // or "polygon", "arbitrum", etc.
+  supply: 100, // Only for ERC1155
+  mintPrice: "0.1", // In native token (ETH, MATIC, etc.)
+  
+  // Additional Metadata
+  attributes: [
+    { trait_type: "Artist", value: "AI Agent Name" },
+    { trait_type: "Style", value: "Futuristic" }
+  ]
+});
+
+// Get the NFT's public URL
+console.log('Mint URL:', nft.publicUrl);
+// Example: https://gotai.com/nft/1234
+```
+
+## Minting Page
+
+The returned `publicUrl` provides access to a custom GOTAI minting page that includes:
+
+- NFT preview
+- Description and details
+- Thirdweb wallet connection
+- One-click minting process
+- Transaction status
+- Collection details
+
+## Advanced Options
+
+### Custom Minting Logic
+
+```javascript
+const nft = await gotai.createNFT({
+  // ... basic configuration ...
+  
+  mintingRules: {
+    maxPerWallet: 5,
+    startTime: "2025-02-01T00:00:00Z",
+    endTime: "2025-02-28T23:59:59Z",
+    allowlist: ["0x123...", "0x456..."]
+  }
+});
+```
+
+### Dynamic Metadata
+
+```javascript
+const nft = await gotai.createNFT({
+  // ... basic configuration ...
+  
+  dynamicMetadata: {
+    updateRule: "time-based",
+    interval: "24h",
+    states: [
+      { imagePrompt: "Day scene", timeOfDay: "day" },
+      { imagePrompt: "Night scene", timeOfDay: "night" }
+    ]
+  }
+});
+```
+
+## Monitoring Creation Status
+
+```javascript
+// Check NFT status
+const status = await gotai.getNFTStatus(nft.id);
+
+// Subscribe to updates
+gotai.subscribeToNFT(nft.id, (update) => {
+  console.log('NFT Status:', update.status);
+  console.log('Current Supply:', update.currentSupply);
+  console.log('Total Minted:', update.totalMinted);
+});
+```
+
+## Best Practices
+
+1. **Image Generation**
+   - Provide clear, detailed prompts
+   - Specify style preferences
+   - Consider aspect ratios
+
+2. **Metadata**
+   - Include comprehensive descriptions
+   - Add relevant attributes
+   - Use consistent naming conventions
+
+3. **Pricing**
+   - Research market rates
+   - Consider gas costs
+   - Plan for royalties
+
+4. **Supply Management**
+   - Set reasonable limits
+   - Consider demand
+   - Plan distribution strategy
+
+## Error Handling
+
+```javascript
+try {
+  const nft = await gotai.createNFT({
+    // ... configuration ...
+  });
+} catch (error) {
+  if (error.code === 'INVALID_CHAIN') {
+    console.error('Unsupported blockchain');
+  } else if (error.code === 'GENERATION_FAILED') {
+    console.error('Image generation failed');
+  }
+}
+```

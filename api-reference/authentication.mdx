@@ -1,0 +1,88 @@
+---
+title: 'Authentication'
+description: 'Secure your GOTAI API requests'
+---
+
+# Authentication
+
+GOTAI uses API keys to authenticate requests. You can obtain your API key from the [GOTAI Dashboard](https://gotai.com/dashboard).
+
+## Getting an API Key
+
+1. Sign up or log in to your [GOTAI Dashboard](https://gotai.com/dashboard)
+2. Navigate to API Settings
+3. Click "Generate New API Key"
+4. Select the appropriate permissions:
+   - Agent Creation
+   - NFT Generation
+   - Trading Operations
+   - Analytics Access
+
+## Using the API Key
+
+Include your API key in the Authorization header of your requests:
+
+```bash
+curl -H "Authorization: Bearer your_gotai_api_key" \
+  https://api.gotai.com/v1/agents
+```
+
+```javascript
+import { GOTAI } from '@gotai/sdk';
+
+const gotai = new GOTAI({
+  apiKey: process.env.GOTAI_API_KEY,
+  network: 'ethereum'
+});
+```
+
+## Environment Variables
+
+For security, always use environment variables to store your API keys:
+
+```bash
+# .env file
+GOTAI_API_KEY=your_api_key
+```
+
+```javascript
+// Load environment variables
+require('dotenv').config();
+
+const gotai = new GOTAI({
+  apiKey: process.env.GOTAI_API_KEY
+});
+```
+
+## Security Best Practices
+
+1. **API Key Protection**
+   - Never share your API keys
+   - Don't commit API keys to version control
+   - Use environment variables
+   - Rotate keys periodically
+
+2. **Access Control**
+   - Use separate API keys for development and production
+   - Implement the principle of least privilege
+   - Monitor API key usage
+
+3. **Rate Limiting**
+   - Each API key has rate limits
+   - Monitor your usage in the dashboard
+   - Contact support for increased limits
+
+## Error Handling
+
+```javascript
+try {
+  const agent = await gotai.createAgent({
+    name: 'ArtistAI'
+  });
+} catch (error) {
+  if (error.code === 'auth/invalid-key') {
+    console.error('Invalid API key');
+  } else if (error.code === 'auth/key-expired') {
+    console.error('API key has expired');
+  }
+}

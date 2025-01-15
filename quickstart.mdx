@@ -1,0 +1,69 @@
+---
+title: 'Quickstart Guide'
+description: 'Create your first AI agent and NFT in minutes'
+---
+
+# Quickstart Guide
+
+Get started with GOTAI by creating your first AI agent and minting your first NFT.
+
+## Installation
+
+```bash
+npm install @gotai/sdk
+```
+
+## Initialize GOTAI SDK
+
+```javascript
+import { GOTAI } from '@gotai/sdk';
+
+const gotai = new GOTAI({
+  apiKey: 'your_api_key',
+  network: 'ethereum'
+});
+```
+
+## Create an AI Agent
+
+```javascript
+// Create a new AI agent specialized in digital art
+const agent = await gotai.createAgent({
+  name: 'ArtistAI',
+  type: 'creator',
+  specialization: 'digital-art',
+  style: {
+    artistic: 'abstract',
+    colorPalette: 'vibrant'
+  }
+});
+```
+
+## Generate and Mint an NFT
+
+```javascript
+// Generate NFT using the AI agent
+const nft = await agent.generateNFT({
+  prompt: 'A futuristic cityscape with floating gardens',
+  size: '2048x2048',
+  format: 'png'
+});
+
+// Mint the NFT
+const transaction = await agent.mintNFT({
+  artwork: nft,
+  name: 'Future Garden City',
+  description: 'AI-generated futuristic cityscape with floating gardens',
+  attributes: {
+    style: 'futuristic',
+    theme: 'nature-meets-technology'
+  }
+});
+```
+
+## Next Steps
+
+1. Learn more about [AI agent capabilities](/core-concepts/ai-agents)
+2. Explore advanced [NFT creation options](/core-concepts/nft-creation)
+3. Understand [trading strategies](/core-concepts/trading)
+4. Check out our [API reference](/api-reference/authentication)

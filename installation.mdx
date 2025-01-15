@@ -1,0 +1,103 @@
+---
+title: 'Installation'
+description: 'Add GOTAI to your AI agent project'
+---
+
+# Installation
+
+GOTAI can be easily integrated into your AI agent project through our SDK or API. Here's how to get started.
+
+## Prerequisites
+
+- Node.js 16 or higher
+- An AI agent project
+- GOTAI API credentials (from waitlist)
+
+## Installing the SDK
+
+```bash
+# Using npm
+npm install @gotai/sdk
+
+# Using yarn
+yarn add @gotai/sdk
+
+# Using pnpm
+pnpm add @gotai/sdk
+```
+
+## Basic Setup
+
+```javascript
+import { GOTAI } from '@gotai/sdk';
+
+// Initialize GOTAI with your API credentials
+const gotai = new GOTAI({
+  apiKey: process.env.GOTAI_API_KEY,
+  environment: 'production' // or 'sandbox' for testing
+});
+```
+
+## Environment Variables
+
+Create a `.env` file in your project root:
+
+```bash
+GOTAI_API_KEY=your_api_key
+```
+
+## Configuration Options
+
+```javascript
+const gotai = new GOTAI({
+  apiKey: process.env.GOTAI_API_KEY,
+  environment: 'production',
+  defaultChain: 'ethereum', // or 'polygon', 'arbitrum', etc.
+  defaultNFTStandard: 'ERC1155', // or 'ERC721'
+  webhookUrl: 'https://your-webhook.com/gotai'
+});
+```
+
+## Verification
+
+Test your installation:
+
+```javascript
+try {
+  const status = await gotai.checkConnection();
+  console.log('GOTAI is properly configured:', status);
+} catch (error) {
+  console.error('Configuration error:', error);
+}
+```
+
+## Next Steps
+
+1. Follow our [quickstart guide](/quickstart) to create your first NFT
+2. Check out [example implementations](/integration/examples)
+3. Review our [API reference](/integration/api-reference)
+
+## Common Issues
+
+### API Key Not Working
+- Ensure you're on the waitlist and have received access
+- Check if the API key is properly set in your environment variables
+- Verify the key format
+
+### Network Issues
+- Check your firewall settings
+- Ensure your network allows secure WebSocket connections
+- Verify your webhook URL is accessible
+
+### Version Compatibility
+- Keep the SDK up to date
+- Check our changelog for breaking changes
+- Use version-specific documentation
+
+## Need Help?
+
+If you encounter any issues during installation:
+
+1. Check our [troubleshooting guide](/troubleshooting)
+2. Join our [Discord community](https://discord.gg/gotai)
+3. Email us at [ai@gotas.com](mailto:ai@gotas.com)

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "GOTAI Documentation",
+  "logo": {
+    "dark": "/logo/dark.png",
+    "light": "/logo/light.png"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#6366f1",
+    "light": "#818cf8",
+    "dark": "#4f46e5",
+    "anchors": {
+      "from": "#6366f1",
+      "to": "#818cf8"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:ai@gotas.com"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Join Waitlist",
+    "url": "https://gotai.com/waitlist"
+  },
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": ["introduction", "quickstart", "installation"]
+    },
+    {
+      "group": "Core Features",
+      "pages": ["features/nft-creation", "features/airdrops", "features/whitelist", "features/trading"]
+    },
+    {
+      "group": "Integration Guide",
+      "pages": ["integration/setup", "integration/api-reference", "integration/examples"]
+    },
+    {
+      "group": "Roadmap",
+      "pages": ["roadmap"]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/gotai",
+    "github": "https://github.com/gotai",
+    "linkedin": "https://www.linkedin.com/company/gotai"
+  }
+}

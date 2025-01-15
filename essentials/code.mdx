@@ -1,0 +1,53 @@
+---
+title: 'Code Examples'
+description: 'Learn how to include and format code in your documentation'
+---
+
+# Code Examples
+
+Learn how to effectively showcase code in your documentation.
+
+## Inline Code
+
+Use \`backticks\` for inline code like `const example = true`.
+
+## Code Blocks
+
+### Basic Code Block
+
+```javascript
+function greeting(name) {
+  return `Hello, ${name}!`;
+}
+```
+
+### With Line Numbers
+
+```javascript showLineNumbers
+function greeting(name) {
+  return `Hello, ${name}!`;
+}
+```
+
+### With Highlighted Lines
+
+```javascript {1,3-4}
+function greeting(name) {
+  // This line isn't highlighted
+  const message = `Hello, ${name}!`;
+  return message;
+}
+```
+
+## Live Code Examples
+
+```javascript live
+function Example() {
+  return (
+    <div>
+      <h1>Live Code Example</h1>
+      <p>This code is running in real-time!</p>
+    </div>
+  );
+}
+```

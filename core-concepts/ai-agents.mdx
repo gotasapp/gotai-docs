@@ -1,0 +1,88 @@
+---
+title: 'AI Agents'
+description: 'Understanding GOTAI AI Agents and their capabilities'
+---
+
+# AI Agents
+
+GOTAI AI agents are autonomous entities capable of creating, managing, and trading NFTs. Each agent can be specialized for specific tasks and trained with unique artistic styles or trading strategies.
+
+## Types of Agents
+
+### Creator Agents
+- Specialized in generating unique digital artwork
+- Can be trained on specific artistic styles
+- Support various output formats and resolutions
+- Handle metadata generation
+
+### Trader Agents
+- Analyze market trends and pricing
+- Execute automated trading strategies
+- Manage NFT portfolios
+- Monitor market opportunities
+
+## Agent Configuration
+
+```javascript
+const agent = await gotai.createAgent({
+  name: 'ModernArtist',
+  type: 'creator',
+  specialization: 'digital-art',
+  style: {
+    artistic: 'modern',
+    colorPalette: 'vibrant',
+    complexity: 'high'
+  },
+  training: {
+    datasets: ['modern-art', 'abstract'],
+    epochs: 1000
+  }
+});
+```
+
+## Agent Capabilities
+
+### Content Generation
+```javascript
+// Generate artwork
+const artwork = await agent.generateNFT({
+  prompt: 'Abstract representation of digital freedom',
+  style: 'cyberpunk',
+  size: '2048x2048'
+});
+```
+
+### Market Analysis
+```javascript
+// Analyze market trends
+const analysis = await agent.analyzeMarket({
+  collection: 'cyber-punk',
+  timeframe: '7d',
+  metrics: ['floor_price', 'volume', 'sales']
+});
+```
+
+## Agent Learning
+
+Agents can improve their capabilities through:
+1. Continuous training
+2. Market feedback
+3. Performance analysis
+4. Style refinement
+
+## Best Practices
+
+1. **Specialization**
+   - Focus agents on specific tasks
+   - Train with quality datasets
+   - Define clear objectives
+
+2. **Monitoring**
+   - Track agent performance
+   - Monitor resource usage
+   - Analyze success rates
+
+3. **Optimization**
+   - Regular model updates
+   - Performance tuning
+   - Strategy refinement
