@@ -39,13 +39,12 @@
       "pages": ["integration/setup", "integration/api-reference", "integration/examples"]
     },
     {
-      "group": "Roadmap",
-      "pages": ["roadmap"]
+      "group": "About",
+      "pages": ["team", "roadmap"]
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/gotai",
-    "github": "https://github.com/gotai",
-    "linkedin": "https://www.linkedin.com/company/gotai"
+    "twitter": "https://x.com/Gotasapp",
+    "discord": "https://discord.com/invite/Vmz8cwxEAR"
   }
 }
